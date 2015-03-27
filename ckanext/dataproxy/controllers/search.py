@@ -76,7 +76,7 @@ class SearchController(ApiController):
         language = request_data.get('language', None) # Not yet implemented
         limit    = request_data.get('limit',    None)
         offset   = request_data.get('offset',   None)
-        fields   = request_data.get('fields',   None) # Not yet implemented
+        fields   = request_data.get('fields',   None)
         sort     = request_data.get('sort',     None)
 
         if fields is not None:
