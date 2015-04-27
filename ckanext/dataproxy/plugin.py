@@ -59,9 +59,9 @@ class DataProxyPlugin(p.SingletonPlugin):
 
         # Remove db connection info from display fields (although it's encrypted)
         attrs_to_hide = ['db', 'db_password', 'db_user', 'db_host', 'table']
-        for attr in attrs_to_hide
-        if attr in resource_dict:
-            resource_dict.pop(attr)
+        for attr in attrs_to_hide:
+            if attr in resource_dict:
+                resource_dict.pop(attr)
         if version < 2.3:
             # For versions below 2.3 we mask dataproxy resources as datastore ones
             if resource_dict.get('url_type') == 'dataproxy':
