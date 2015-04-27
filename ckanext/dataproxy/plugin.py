@@ -58,7 +58,7 @@ class DataProxyPlugin(p.SingletonPlugin):
         ''' IResourceController '''
 
         # Remove db connection info from display fields (although it's encrypted)
-        attrs_to_hide = ['database', 'db', 'db_password', 'db_user', 'db_host', 'host', 'table']
+        attrs_to_hide = ['database', 'db', 'db_password', 'db_user', 'db_host', 'host', 'port', 'table']
         for attr in attrs_to_hide:
             if attr in resource_dict:
                 resource_dict.pop(attr)
