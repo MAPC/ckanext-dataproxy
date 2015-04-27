@@ -1,0 +1,11 @@
+{% ckan_extends %}
+{% block styles %}
+  {{ super() }}
+  {% resource 'dataproxy/dataproxy.css' %}
+{% endblock %}
+{% block resource_read_url %}{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  {% resource 'vendor/fileupload' %}
+  {% resource 'dataproxy/dataproxy.js' %}
+{% endblock %}
