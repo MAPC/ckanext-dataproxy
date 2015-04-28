@@ -83,8 +83,10 @@ class DataProxyPlugin(p.SingletonPlugin):
 
     def before_map(self, map):
         ''' IRoutes '''
-        #Override API mapping on controller level to intercept dataproxy calls
+        # Override API mapping on controller level to intercept dataproxy calls
         search_ctrl = 'ckanext.dataproxy.controllers.search:SearchController'
-        map.connect('dataproxy', '/api/3/action/datastore_search', controller=search_ctrl, action='search_action')
+        dump_ctrl   = 'ckanext.dataproxy.controllers.dump:DumpController'
+        map.connect('dataproxy', '/api/3/action/datastore_search',     controller=search_ctrl, action='search_action')
         map.connect('dataproxy', '/api/3/action/datastore_search_sql', controller=search_ctrl, action='search_sql_action')
+        map.connect('dataproxy', '/datastore/dump/{resource_id}',      controller=dump_ctrl,   action='dump_action')
         return map
