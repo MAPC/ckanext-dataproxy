@@ -20,6 +20,8 @@ class DumpController(base.BaseController):
         
         # TODO: No access control checks for dataproxy resources!
         resource     = Resource.get( resource_id )
+        print(resource)
+        print(resource.url_type)
 
         if resource is not None and resource.url_type == 'dataproxy':
             pylons.response.headers['Content-Type'] = 'text/csv'
