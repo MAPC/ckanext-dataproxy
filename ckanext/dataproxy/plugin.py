@@ -88,5 +88,5 @@ class DataProxyPlugin(p.SingletonPlugin):
         dump_ctrl   = 'ckanext.dataproxy.controllers.dump:DumpController'
         map.connect('dataproxy', '/api/3/action/datastore_search',     controller=search_ctrl, action='search_action')
         map.connect('dataproxy', '/api/3/action/datastore_search_sql', controller=search_ctrl, action='search_sql_action')
-        map.connect('dataproxy', '/datastore/dump/{resource_id}',      controller=dump_ctrl,   action='dump_action')
+        map.connect('dataproxy', '/dataproxy/dump/{resource_id}',      controller=dump_ctrl,   action='dump_action')
         return map
